@@ -140,6 +140,9 @@ class Psept:
         return size
 
     def creat_ordered_pdb_list(self):
+        """
+        Create ordered pdb list
+        """
         for sav in self.__data:
             uniprot, pos, wt_aa, mu_aa = sav.split()
             pos = int(pos)
