@@ -173,17 +173,26 @@ class Psept:
 
                 pos_in_pdb = pos + (pdb_beg - uni_beg)
 
+                # Get PDB size from pdb_info
                 try:
                     pdb_size = int(self.__pdb_info['size']['data'][pdb])
+
+                # If not recorded, download PDB.
                 except KeyError:
                     pdb_size = self.get_pdb_size(pdb)
+
+                # Continue if any error occurred.
                 if not pdb_size:
                     continue
                 else:
                     pdb_size_list.append((pdb, pdb_size, chain, pos_in_pdb))
+
+            # Continue if no PDB matched.
             if not pdb_size_list:
                 self.__sav_ordered_pdb_dict[sav] = 'No PDB matched.'
                 continue
+
+            # Sort by size and order by median.
             sort_by_size = sorted(pdb_size_list, key=lambda x: x[1])
             middle_start_list = []
             for i in range(len(sort_by_size)):
