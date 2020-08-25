@@ -12,6 +12,7 @@ from pyrosetta.toolbox.cleaning import cleanATOM
 
 class Psept:
     __repack_radius = 8
+
     def __init__(self, pdb_info_path='pdb_info.json'):
         """
         Initilize and setting for Psept.
@@ -99,6 +100,13 @@ class Psept:
                 return True
             else:
                 return False
+
+    @classmethod
+    def get_repack_radius(cls):
+        """
+        Get repack_radius
+        """
+        return cls.__repack_radius
 
     def get_pdb_size(self, pdb):
         """
@@ -224,6 +232,7 @@ def main():
     psept = Psept()
     psept.load_savs('test_sav.txt')
     psept.scoring()
+
 
 
 if __name__ == '__main__':
