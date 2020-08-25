@@ -108,6 +108,13 @@ class Psept:
         """
         return cls.__repack_radius
 
+    @classmethod
+    def set_repack_radius(cls, new_repack_radius):
+        """
+        Set repack_radius
+        """
+        cls.__repack_radius = new_repack_radius
+
     def get_pdb_size(self, pdb):
         """
         Get pdb size. This function follows several steps:
@@ -232,7 +239,6 @@ def main():
     psept = Psept()
     psept.load_savs('test_sav.txt')
     psept.scoring()
-
 
 
 if __name__ == '__main__':
