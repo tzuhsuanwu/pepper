@@ -11,6 +11,7 @@ from pyrosetta.toolbox.cleaning import cleanATOM
 
 
 class Psept:
+    __repack_radius = 8
     def __init__(self, pdb_info_path='pdb_info.json'):
         """
         Initilize and setting for Psept.
@@ -192,7 +193,7 @@ class Psept:
 
             # Continue if no PDB matched.
             if not pdb_size_list:
-                self.__sav_ordered_pdb_dict[sav] = 'No PDB matched.'
+                self.__sav_to_ordered_pdb.append([sav, 'No PDB matched.'])
                 continue
 
             # Sort by size and order by median.
@@ -201,8 +202,8 @@ class Psept:
             while sort_by_size:
                 median = len(sort_by_size)//2
                 middle_start_list.append(sort_by_size.pop(median))
-            self.__sav_ordered_pdb_dict[sav] = [middle_start_list]
-            print(self.__sav_ordered_pdb_dict)
+            self.__sav_to_ordered_pdb.append([sav, middle_start_list])
+            print(self.__sav_to_ordered_pdb)
             break
 
     def scoring(self):
@@ -211,7 +212,7 @@ class Psept:
         The function will process savs in input file and output energy scores.
         """
         init()
-        self.__sav_ordered_pdb_dict = {}
+        self.__sav_to_ordered_pdb = []
         # Load position data.
         self.__map_df = pd.read_csv('uniprot_segments_observed.csv', skiprows=1)
 
