@@ -123,6 +123,13 @@ class Psept:
         """
         return cls.__probe_radius
 
+    @classmethod
+    def set_probe_radius(cls, new_probe_radius):
+        """
+        Set probe_radius
+        """
+        cls.__probe_radius = new_probe_radius
+
     def get_pdb_size(self, pdb):
         """
         Get pdb size. This function follows several steps:
