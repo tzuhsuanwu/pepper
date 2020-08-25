@@ -289,7 +289,7 @@ class Psept:
             sub_df = result_df[~result_df.predict_status.isin(['success', 'failed'])]
 
             if sub_df.empty:
-                result_df.to_csv("result.csv", index=False)
+                self.__scoring_result = result_df
                 break
 
             # Pop new PDB from ordered_PDB_list and update the information
