@@ -198,7 +198,7 @@ class Psept:
             # Sort by size and order by median.
             sort_by_size = sorted(pdb_size_list, key=lambda x: x[1])
             middle_start_list = []
-            for i in range(len(sort_by_size)):
+            while sort_by_size:
                 median = len(sort_by_size)//2
                 middle_start_list.append(sort_by_size.pop(median))
             self.__sav_ordered_pdb_dict[sav] = [middle_start_list]
