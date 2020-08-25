@@ -140,7 +140,7 @@ class Psept:
         self.__pdb_info['size']['data'][pdb] = size
         return size
 
-    def creat_ordered_pdb_list(self):
+    def create_ordered_pdb_list(self):
         """
         Create ordered pdb list
         """
@@ -217,7 +217,7 @@ class Psept:
         self.__map_df = pd.read_csv('uniprot_segments_observed.csv', skiprows=1)
 
         # Generate ordered pdb list for input savs.
-        self.creat_ordered_pdb_list()
+        self.create_ordered_pdb_list()
 
 
 def main():
