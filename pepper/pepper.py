@@ -460,7 +460,7 @@ class Pepper:
                         sub_df.at[idx, self.__whole_column[i]] = result[i]
                     self.__main_log.info(f'{temp_df.loc[idx]["SAV"]} successful scoring')
                 result_df.update(sub_df)
-                result_df.to_csv('structure_energies_score.csv', index=False)
+
                 if self.__remove_pdb_after_scoring:
                     os.remove(self.__root_pdb_folder / 'full_pdb' / (pdb + '.pdb'))
                     os.remove(self.__root_pdb_folder / 'clean_pdb' / (pdb + '.clean.pdb'))
