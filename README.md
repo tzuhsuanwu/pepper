@@ -1,4 +1,4 @@
-# pse-prediction-tool
+# pepper
 ## Introduction
 Protein Energy-based Pathogenicity PrEdictoR (PEPPER) is a machine learning method based on the protein structure energy to predict the pathogenicity of single amino acid variants (SAVs).
 
@@ -20,8 +20,9 @@ All methods in PEPPER is wrapped in class named Pepper. Three steps are needed t
 
 The scripts will look like below:
 ```python
-pepper = Pepper()
-pepper.load_savs('test_sav.txt')
+from pepper import pepper
+pepper = pepper.Pepper()
+pepper.load_savs('input_sav.txt')
 pepper.scoring()
 pepper.prediction()
 ```
