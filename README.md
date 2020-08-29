@@ -21,11 +21,15 @@ All methods in PEPPER is wrapped in class named Pepper. Three steps are needed t
 The scripts will look like below:
 ```python
 from pepper import pepper
+
 pepper = pepper.Pepper()
 pepper.load_savs('input_sav.txt')
 pepper.scoring()
 pepper.prediction()
 ```
+
+After prediction, a csv file named "predict_result.csv" will be generated in folder.
+This file contain basic information, predict label, REF2015 score of each SAV.
 
 ### Input format
 The format of SAVs input file:
@@ -33,7 +37,7 @@ The format of SAVs input file:
 
 Four elements are seperated by one space and each SAV are seperated into different lines.
 
-It should be look like:
+It should be like:
 ```
 O95140 263 S P
 P08514 273 G D
