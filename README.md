@@ -55,7 +55,7 @@ In supplement folder, we provided some related files for further usage.
 "other_tools_result_from_annovar.csv" is a file recorded predict results of other tools.
 "rhapsody-predictions.csv" is a file recorded predict results which is download from Rhapsody website directly.
 
-#### Statical analyze
+#### Statistic analyze
 "charge_wilcoxon_pvalue.csv" and "polarity_wilcoxon_pvalue.csv" are files recorded p-value of each energy feature.
 
 ## References
