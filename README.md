@@ -44,6 +44,20 @@ P08514 273 G D
 P02766 136 Y S
 ...
 ```
+
+### Supplement
+In supplement folder, we provided some related files for further usage.
+
+#### Train and test dataset
+"train.csv" and "test.csv" are our train and test dataset. All information including SAV, label, PDB and energy scores are recorded in these files.
+
+#### Other tools performance
+"other_tools_result_from_annovar.csv" is a file recorded predict results of other tools.
+"rhapsody-predictions.csv" is a file recorded predict results which is download from Rhapsody website directly.
+
+#### Statical analyze
+"charge_wilcoxon_pvalue.csv" and "polarity_wilcoxon_pvalue.csv" are files recorded p-value of each energy feature.
+
 ## References
 [1] PyRosetta: Chaudhury, Sidhartha, Sergey Lyskov, and Jeffrey J. Gray. "PyRosetta: a script-based interface for implementing molecular modeling algorithms using Rosetta." Bioinformatics 26.5 (2010): 689-691.
 
